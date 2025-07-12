@@ -9,9 +9,40 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.example.universallinks",
+      "associatedDomains": [
+        "applinks:universal-links-web.vercel.app"
+      ]
     },
     "android": {
+      "package": "com.example.universallinks",
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "data": {
+            "scheme": "https",
+            "host": "universal-links-web.vercel.app",
+            "pathPrefix": "/invite"
+          },
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        },
+        {
+          "action": "VIEW",
+          "data": {
+            "scheme": "https",
+            "host": "universal-links-web.vercel.app",
+            "pathPrefix": "/contact-us"
+          },
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        }
+      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -37,6 +68,12 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "e424e202-a6ea-4e26-9086-535d6f213e76"
+      }
     }
   }
 }
