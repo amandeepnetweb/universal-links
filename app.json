@@ -11,36 +11,19 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.example.universallinks",
-      "associatedDomains": [
-        "applinks:universal-links-web.vercel.app"
-      ]
+      "associatedDomains": ["applinks:universal-links-web.vercel.app"]
     },
     "android": {
       "package": "com.example.universallinks",
       "intentFilters": [
         {
           "action": "VIEW",
+          "autoVerify": true,
           "data": {
             "scheme": "https",
-            "host": "universal-links-web.vercel.app",
-            "pathPrefix": "/invite"
+            "host": "universal-links-web.vercel.app"
           },
-          "category": [
-            "BROWSABLE",
-            "DEFAULT"
-          ]
-        },
-        {
-          "action": "VIEW",
-          "data": {
-            "scheme": "https",
-            "host": "universal-links-web.vercel.app",
-            "pathPrefix": "/contact-us"
-          },
-          "category": [
-            "BROWSABLE",
-            "DEFAULT"
-          ]
+          "category": ["BROWSABLE", "DEFAULT"]
         }
       ],
       "adaptiveIcon": {
