@@ -3,13 +3,19 @@
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
+    "installp": "npx expo install",
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
-    "lint": "expo lint",
-    "eject": "npx expo prebuild --clean"
+    "android": "npx expo run:android",
+    "ios": "npx expo run:ios",
+    "web": "npx expo start --web",
+    "lint": "npx expo lint",
+    "eject": "npx expo prebuild --clean",
+    "uninstall": "adb uninstall com.example.universallinks",
+    "open:android": "npx uri-scheme open \"https://universal-links-web.vercel.app/contact-us\" --android",
+    "open:ios": "npx uri-scheme open \"https://universal-links-web.vercel.app/contact-us\" --ios",
+    "apk:dev": "cd android && ./gradlew assembleDebug && cd ..",
+    "eas:apk-dev": "eas build --profile preview --platform android"
   },
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",
@@ -19,6 +25,7 @@
     "expo": "~53.0.17",
     "expo-blur": "~14.1.5",
     "expo-constants": "~17.1.7",
+    "expo-dev-client": "~5.2.4",
     "expo-font": "~13.3.2",
     "expo-haptics": "~14.1.4",
     "expo-image": "~2.3.2",
@@ -37,8 +44,7 @@
     "react-native-safe-area-context": "5.4.0",
     "react-native-screens": "~4.11.1",
     "react-native-web": "~0.20.0",
-    "react-native-webview": "13.13.5",
-    "expo-dev-client": "~5.2.4"
+    "react-native-webview": "13.13.5"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
